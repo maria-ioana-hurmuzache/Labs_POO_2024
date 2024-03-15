@@ -16,6 +16,6 @@ int main()
 	cout << Math::Mul(4, 2, 7) << '\n';
 	cout << Math::Mul(4.2, 2.7, 7.5) << '\n';
 	cout << Math::Add(5, 1, 2, 3, 4, 5) << '\n';
-	cout << Math::Add("pisica ", "neagra");
+	cout << Math::Add("599", "402");
 	return 0;
 }

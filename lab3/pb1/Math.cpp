@@ -1,6 +1,11 @@
 #include "Math.h"
 #include <cstdarg>
 #include <cstring>
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+typedef int nrMare[1006];
 
 int Math::Add(int a, int b)
 {
@@ -57,9 +62,35 @@ char* Math::Add(const char* a, const char* b)
 {
 	if (a == nullptr || b == nullptr)
 		return nullptr;
-	int length = strlen(a) + strlen(b) + 1;
-	char* ab = new char[length];
-	strcpy_s(ab, length, a);
-	strcat_s(ab, length, b);
-	return ab;
+	nrMare x = {}, y = {};
+	x[0] = strlen(a);
+	for (int i = 1; i <= x[0]; i++)
+		x[i] = (*(a + strlen(a) - i))-'0';
+	y[0] = strlen(b);
+	for (int i = 1; i <= y[0]; i++)
+		y[i] = (*(b + strlen(b) - i))-'0';
+	int length = x[0];
+	x[0] = length;
+	int t = 0;
+	for (int i = 1; i <= x[0]; i++)
+	{
+		x[i] = x[i] + y[i] + t;
+		t = x[i] / 10;
+		x[i] = x[i] % 10;
+		cout << t << '\n';
+	}
+	if (t != 0)
+	{
+		x[0]++;
+		x[x[0]] = t;
+	}
+	char* rez = new char[x[0]];
+	char* aux = rez;
+	for (int i = 0; i < x[0]; i++)
+	{
+		(*aux) = x[x[0] - i] + '0';
+		aux++;
+	}
+	(*aux) = '\0';
+	return rez;
 }
