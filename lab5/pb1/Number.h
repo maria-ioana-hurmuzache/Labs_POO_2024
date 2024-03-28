@@ -38,9 +38,6 @@ public:
 	void operator--();
 	void operator--(int);
 
-	//friend bool operator <(const Number& n1, const Number& n2);
-	// add operators and copy/move constructor
-
 	void SwitchBase(int newBase);
 	void Print();
 	int  GetDigitsCount(); // returns the number of digits for the current number
