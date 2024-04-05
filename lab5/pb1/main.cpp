@@ -21,7 +21,7 @@ int main()
     n1.Print();
     n2.Print();
 
-    n1 = (n2 + n3 - n1) + n1; // after this n1 will be in base 16
+    n1 = (n2 + n3 - n1) + n1;
     n1.SwitchBase(10);
     n1.Print();
 
