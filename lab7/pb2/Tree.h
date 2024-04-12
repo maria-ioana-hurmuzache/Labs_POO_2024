@@ -204,7 +204,6 @@ public:
 				this->printNodes(parinte->children[i]);
 				std::cout << "} ";
 			}
-		//std::cout << '\n';
 	}
 };
 
@@ -361,6 +360,5 @@ public:
 				this->printNodes(parinte->children[i]);
 				std::cout << "} ";
 			}
-		//std::cout << '\n';
 	}
 };
